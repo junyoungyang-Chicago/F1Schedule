@@ -1,0 +1,74 @@
+{
+  "baseline": {
+    "Alpine": {
+      "Franco Colapinto": 43,
+      "Pierre Gasly": 10
+    },
+    "Aston Martin": {
+      "Fernando Alonso": 14,
+      "Lance Stroll": 18
+    },
+    "Audi": {
+      "Gabriel Bortoleto": 5,
+      "Nico Hulkenberg": 27
+    },
+    "Cadillac": {
+      "Sergio Perez": 11,
+      "Valtteri Bottas": 77
+    },
+    "Ferrari": {
+      "Charles Leclerc": 16,
+      "Lewis Hamilton": 44
+    },
+    "Haas F1 Team": {
+      "Oliver Bearman": 87,
+      "Rafael Camara": 51
+    },
+    "McLaren": {
+      "Lando Norris": 1,
+      "Oscar Piastri": 81
+    },
+    "Mercedes": {
+      "George Russell": 63,
+      "Kimi Antonelli": 12
+    },
+    "Racing Bulls": {
+      "Arvid Lindblad": 41,
+      "Liam Lawson": 30
+    },
+    "Red Bull Racing": {
+      "Isack Hadjar": 6,
+      "Max Verstappen": 3
+    },
+    "Williams": {
+      "Alexander Albon": 23,
+      "Carlos Sainz": 55
+    }
+  },
+  "baseline_from": "Las Vegas Grand Prix",
+  "processed": [
+    11234,
+    11245,
+    11253,
+    11261,
+    11269,
+    11280,
+    11291,
+    11299,
+    11307,
+    11315,
+    11326,
+    11334,
+    11342,
+    11353,
+    11361,
+    11369,
+    11377,
+    11731,
+    11388,
+    11396,
+    11404,
+    11412,
+    11420
+  ]
+}
