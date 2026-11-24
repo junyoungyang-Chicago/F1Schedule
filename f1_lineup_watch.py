@@ -77,6 +77,17 @@ def ended(s, now):
     return datetime.fromisoformat(s["date_end"]) + SETTLE < now
 
 
+def format_lineup(lu):
+    """One line per team, e.g. '• *McLaren*: Lando Norris, Oscar Piastri'."""
+    return "\n".join(f"• *{team}*: {', '.join(sorted(drivers))}"
+                     for team, drivers in sorted(lu.items()))
+
+
+def status_message(state):
+    return (f"🏁 F1 lineup watcher is running. Reference lineup: "
+            f"*{state['baseline_from']}*\n" + format_lineup(state["baseline"]))
+
+
 # ---------------------------------------------------------------- notify/state
 def notify(text):
     print(text, "\n")
@@ -138,9 +149,12 @@ def main():
         # Don't replay history: mark everything already finished as handled.
         state["processed"] = [s["session_key"] for s in done]
         save_state(state)
-        notify(f"🏁 F1 lineup watcher is running. Reference lineup: "
-               f"*{state['baseline_from']}*.")
+        notify(status_message(state))
         return
+
+    # Manual "Run workflow" click: post the saved reference lineup as a status check.
+    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+        notify(status_message(state))
 
     processed = set(state["processed"])
     for s in done:
